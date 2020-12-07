@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>eMercado - Todo lo que busques está aquí</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <link rel="icon"  href="img/logo.png">
+
+    <script type="text/javascript">
+
+      function login(){
+        var contG = localStorage.getItem("VariableContador");
+        if (contG == null || contG == 0){
+          window.location.href="login.html";
+          console.log(contG);
+          contG = 1;
+          localStorage.setItem("VariableContador", contG);
+        }
+      }
+      login();
+
+      function cerrarSesion(){
+        localStorage.setItem("VariableContador", 0);
+        login();
+      }
+
+      window.onload = function() {
+        document.getElementById('welcome').innerText = "Hola, " + localStorage.getItem('sesionactual');
+      };
+
+    </script>
+ </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand"  href="index.html"><img style="height:60px;" src="img/logo.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul  class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link categorias" style="font-weight: bold; color: #ff006d;" href="categories.html">Categorías </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-weight: bold; color: #ff006d;" href="products.html">Productos</a>
+          </li>
+          <li class="nav-item dropdown ">
+            <a style="font-weight: bold; color:#ff006d;" class="nav-link dropdown-toggle" href="#" id="welcome" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </a>
+            <div class="dropdown-menu" style="border:none; " aria-labelledby="navbarDropdown">
+              <a class="dropdown-item"  href="sell.html">Vender</a>
+            <a class="dropdown-item" href="cart.html">Mi carrito</a>
+            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+            <a class="dropdown-item" onclick="cerrarSesion();" href="#">Cerrar sesión</a>
+            </div>
+          </li>
+         
+        </ul>
+        
+      </div>
+    </nav>
+
+    <div class="container p-5">
+      <div style="position: relative; width:auto; top: 0;">
+        <div class="container">
+          <div class="row">
+              <div class="col text-right">
+              </div>
+          </div>
+      
+      </div>
+    </div>
+    <h3 id="categoryName"></h3>
+    <hr class="my-3">
+    <dl>
+
+
+
+  
+
+
+
+      <div class="media">
+      
+        <dd style="width: 50%;">
+  
+          <div  id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" id="productImagesGallery">
+              
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </dd>
+        <div class="media-body" style="padding: 15px;">
+          <h3>Descripción</h3>
+          <dd>
+            <p id="categoryDescription"></p>
+          </dd>
+    
+          <dt>Cantidad de productos en la categoría</dt>
+          <dd>
+            <p id="productCount"></p>
+          </dd>
+          
+          <dt>Costo</dt>
+          <dd>
+            <p id="productCriteria"></p>
+          </dd>
+        </div>
+      </div>
+
+      <dt>Relacionados</dt>
+      <dd>
+        <div  class="row text-center text-lg-left pt-2" id="relacionadas" >
+        </div>
+      </dd> 
+
+
+      <h3 style="margin: 60px;">Comentarios</h3>
+
+
+      <form  action="">
+        <label style="display: block;width:100%;" for=""> Agregar Nuevo</label>
+        <textarea name="Areadetexto" id="" style="display: block;width:100%;"  placeholder="Dejá acá tu reseña"></textarea>
+        <label style="display: block;"for=""> Puntuación</label>
+          <input style="display: block; margin-bottom: 60px;" type="range" id="vol" name="vol" min="1" max="5">
+
+        <button type="submit" class="btn btn-light">Enviar</button>
+      </form>
+
+      <p></p>
+
+      <dd></dd>
+      <dd></dd> <div class="row text-center text-lg-left pt-2" ; id="comentarios" ></div></dd>
+
+
+    </dl>
+    <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+  </div>
+
+
+  
+    <footer class="text-muted bg-light">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper"><div class="lds-ring"></div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/product-info.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+
+
+  </body>
+</html>
